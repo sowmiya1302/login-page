@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="icon" href="loginn.jpg" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <h1>Login</h1>
+        <form id="loginForm" action="./login.html"> 
+          <div class="txt_field">
+            <input type="text" name="name" id="username" />
+            <span></span>
+            <label>Username</label>
+          </div>
+          <div class="txt_field">
+            <input type="password" name="password" id="password" />
+            <span></span>
+            <label>Password</label>
+          </div>
+          <div class="pass">Forget Password?</div>
+          <input
+
+            type="Submit"
+            value="Login"
+            onclick="val(event)"
+          />
+
+          <div class="signup_link">
+            Not a Member ? <a href="sign.html">Signup</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    function val(event) {
+      event.preventDefault();
+
+      // Get form elements
+      const form = document.getElementById("loginForm");
+      const username = document.getElementById("username");
+      const password = document.getElementById("password");
+
+      // Check if the form is valid
+      if (username.value.trim() === "") {
+        alert(" Please fill in name fields.");
+      } else if (password.value.trim() === "") {
+        alert(" Please fill in password fields.");
+      } else {
+        alert("Login Successful!");
+        form.submit();
+      }
+    }
+  </script>
+</html>
